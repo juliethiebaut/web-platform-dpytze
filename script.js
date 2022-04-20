@@ -24,7 +24,7 @@ const data = {
       label: 'Non',
       data: [9 / 10, 4 / 5, 3 / 3, 5 / 6, 3 / 3, 3 / 3, 3 / 4],
       fill: true,
-      backgroundColor: 'rgba(171, 171, 171, 0.2)',
+      backgroundColor: 'rgba(242, 0, 0, 0.2)',
       borderColor: 'rgb(171, 171, 171)',
       pointBackgroundColor: 'rgb(242, 0, 0)',
       pointBorderColor: '#fff',
