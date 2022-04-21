@@ -23,7 +23,7 @@ const data = {
     },
     {
       label: 'Question 2',
-      data: [20, 40, 66, 50, 66, 20, 50],
+      data: [20, 40, 67, 50, 67, 20, 50],
       fill: false,
       // backgroundColor: 'rgba(31, 156, 77, 0.2)',
       // borderColor: 'rgb(31, 156, 77)',
