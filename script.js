@@ -205,6 +205,8 @@ Chart.defaults.font.size = 16;
 
 const myChart = new Chart(document.getElementById('myChart'), config);
 
+Chart.defaults.plugins.legend.position = 'top';
+
 const stackedBarData = {
   labels: [
     'Trouvez-vous que le réchauffement climatique soit un sujet sérieusement pris en compte dans votre département/service/unité de travail ?',
@@ -546,6 +548,9 @@ const stackedBar6 = {
       title: {
         display: true,
         text: 'Conséquences pour les salariés',
+      },
+      legend: {
+        position: 'top',
       },
     },
   },
