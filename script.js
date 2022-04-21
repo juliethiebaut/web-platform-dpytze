@@ -244,6 +244,7 @@ const data = {
     },
   ],
 };
+
 const config = {
   type: 'radar',
   data: data,
@@ -253,15 +254,92 @@ const config = {
         borderWidth: 3,
       },
     },
-    // plugins: {
-    //   legend: {
-    //     display: true,
-    //     labels: {
-    //       color: 'rgb(255, 99, 132)',
-    //     },
-    //   },
-    // },
+    plugins: {
+      legend: {
+        display: false,
+        labels: {
+          color: 'rgb(255, 99, 132)',
+        },
+      },
+    },
+    scales: {
+      r: {
+        display: true,
+        min: 0,
+        max: 100,
+        grid: {
+          display: true,
+        },
+      },
+    },
   },
 };
 
 const myChart = new Chart(document.getElementById('myChart'), config);
+
+const stackedBarData = {
+  labels: [
+    'Lutte contre le changement climatique',
+    "Lutte contre l'effondrement de la biodiversité",
+    'Lutte contre les pollutions',
+    'Réduction de consommation de ressources',
+    'Mise en cohérence de la stratégie économique',
+    'Implication des salariés',
+    "Stratégie d'influence",
+  ],
+  datasets: [
+    {
+      label: 'Oui',
+      data: [40, 40, 67, 50, 0, 67, 50],
+      fill: true,
+      backgroundColor: 'rgba(31, 156, 77, 0.2)',
+      borderColor: 'rgb(31, 156, 77)',
+      pointBackgroundColor: 'rgb(31, 156, 77)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(31, 156, 77)',
+    },
+    {
+      label: 'Non',
+      data: [90, 80, 100, 83, 100, 100, 75],
+      fill: true,
+      backgroundColor: 'rgba(242, 0, 0, 0.2)',
+      borderColor: 'rgb(171, 171, 171)',
+      pointBackgroundColor: 'rgb(242, 0, 0)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(242, 0, 0)',
+    },
+    {
+      label: 'Non pertinent',
+      data: [100, 100, 100, 100, 100, 100, 100],
+      fill: true,
+      backgroundColor: 'rgba(171, 171, 171, 0.2)',
+      borderColor: 'rgb(171, 171, 171)',
+      pointBackgroundColor: 'rgb(171, 171, 171)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(171, 171, 171)',
+    },
+  ],
+};
+
+const stackedBar = {
+  type: 'bar',
+  data: stackedBarData,
+  options: {
+    indexAxis: 'y',
+    scales: {
+      x: {
+        stacked: true,
+        min: 0,
+        max: 100,
+      },
+      y: {
+        stacked: true,
+      },
+    },
+  },
+};
+
+const myChart2 = new Chart(document.getElementById('myChart2'), stackedBar);
