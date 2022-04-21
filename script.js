@@ -131,7 +131,7 @@ const data = {
     },
     {
       label: 'Oui',
-      data: [40, 40, 67, 50, 0, 67, 50],
+      data: [40, 40, 67, 50, 0, 70, 50],
       fill: true,
       backgroundColor: 'rgba(31, 156, 77, 0.2)',
       borderColor: 'rgb(31, 156, 77)',
@@ -190,10 +190,18 @@ const config = {
         grid: {
           display: true,
         },
+        ticks: {
+          color: 'none',
+        },
+        pointLabels: {
+          fontSize: 16,
+        },
       },
     },
   },
 };
+
+Chart.defaults.font.size = 16;
 
 const myChart = new Chart(document.getElementById('myChart'), config);
 
@@ -221,7 +229,7 @@ const stackedBarData = {
     },
     {
       label: 'Non',
-      data: [90, 80, 100, 83, 100, 100, 75],
+      data: [50, 40, 33, 33, 100, 33, 25],
       fill: true,
       backgroundColor: 'rgba(242, 0, 0, 0.2)',
       borderColor: 'rgb(171, 171, 171)',
@@ -232,7 +240,7 @@ const stackedBarData = {
     },
     {
       label: 'Non pertinent',
-      data: [100, 100, 100, 100, 100, 100, 100],
+      data: [10, 20, 0, 27, 0, 0, 25],
       fill: true,
       backgroundColor: 'rgba(171, 171, 171, 0.2)',
       borderColor: 'rgb(171, 171, 171)',
@@ -257,6 +265,12 @@ const stackedBar = {
       },
       y: {
         stacked: true,
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: 'Lutte contre le changement climatique',
       },
     },
   },
