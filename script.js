@@ -207,18 +207,15 @@ const myChart = new Chart(document.getElementById('myChart'), config);
 
 const stackedBarData = {
   labels: [
-    'Lutte contre le changement climatique',
-    "Lutte contre l'effondrement de la biodiversité",
-    'Lutte contre les pollutions',
-    'Réduction de consommation de ressources',
-    'Mise en cohérence de la stratégie économique',
-    'Implication des salariés',
-    "Stratégie d'influence",
+    'Trouvez-vous que le réchauffement climatique soit un sujet sérieusement pris en compte dans votre département/service/unité de travail ?',
+    'Vous donne-t-on les moyens de mesurer ou de faire diminuer les émissions de gaz à effet de serre des produits ou services sur lesquels vous travaillez ?',
+    'Pensez-vous que votre travail contribue à faire baisser les émissions de gaz à effet de serre de la société dans son ensemble ?',
+    'Savez-vous si votre entreprise adapte votre lieu de travail et votre travail aux conséquences à venir du changement climatique ?',
   ],
   datasets: [
     {
       label: 'Oui',
-      data: [40, 40, 67, 50, 0, 67, 50],
+      data: [40, 40, 67, 50],
       fill: true,
       backgroundColor: 'rgba(31, 156, 77, 0.2)',
       borderColor: 'rgb(31, 156, 77)',
@@ -229,7 +226,7 @@ const stackedBarData = {
     },
     {
       label: 'Non',
-      data: [50, 40, 33, 33, 100, 33, 25],
+      data: [50, 40, 33, 33],
       fill: true,
       backgroundColor: 'rgba(242, 0, 0, 0.2)',
       borderColor: 'rgb(171, 171, 171)',
@@ -240,7 +237,7 @@ const stackedBarData = {
     },
     {
       label: 'Non pertinent',
-      data: [10, 20, 0, 27, 0, 0, 25],
+      data: [10, 20, 0, 27],
       fill: true,
       backgroundColor: 'rgba(171, 171, 171, 0.2)',
       borderColor: 'rgb(171, 171, 171)',
@@ -277,3 +274,72 @@ const stackedBar = {
 };
 
 const myChart2 = new Chart(document.getElementById('myChart2'), stackedBar);
+
+const stackedBarData3 = {
+  labels: [
+    "Trouvez-vous que l'effondrement de la biodiversité soit un sujet sérieusement pris en compte dans votre département/service/unité de travail ?",
+    "Vous donne-t-on les moyens de mesurer ou de faire diminuer l'impact sur la biodiversité des produits ou service sur lesquels vous travaillez ?",
+    'Pensez-vous que votre travail contribue à faire baisser la destruction de la biodiversité de la société dans son ensemble ?',
+  ],
+  datasets: [
+    {
+      label: 'Oui',
+      data: [40, 40, 67],
+      fill: true,
+      backgroundColor: 'rgba(31, 156, 77, 0.2)',
+      borderColor: 'rgb(31, 156, 77)',
+      pointBackgroundColor: 'rgb(31, 156, 77)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(31, 156, 77)',
+    },
+    {
+      label: 'Non',
+      data: [50, 40, 33],
+      fill: true,
+      backgroundColor: 'rgba(242, 0, 0, 0.2)',
+      borderColor: 'rgb(171, 171, 171)',
+      pointBackgroundColor: 'rgb(242, 0, 0)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(242, 0, 0)',
+    },
+    {
+      label: 'Non pertinent',
+      data: [10, 20, 0],
+      fill: true,
+      backgroundColor: 'rgba(171, 171, 171, 0.2)',
+      borderColor: 'rgb(171, 171, 171)',
+      pointBackgroundColor: 'rgb(171, 171, 171)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgb(171, 171, 171)',
+    },
+  ],
+};
+
+const stackedBar3 = {
+  type: 'bar',
+  data: stackedBarData,
+  options: {
+    indexAxis: 'y',
+    scales: {
+      x: {
+        stacked: true,
+        min: 0,
+        max: 100,
+      },
+      y: {
+        stacked: true,
+      },
+    },
+    plugins: {
+      title: {
+        display: true,
+        text: "Lutte contre l'effondrement de la biodiversité",
+      },
+    },
+  },
+};
+
+const myChart3 = new Chart(document.getElementById('myChart3'), stackedBar3);
