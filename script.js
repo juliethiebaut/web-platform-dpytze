@@ -206,6 +206,7 @@ const config = {
 const myChart = new Chart(document.getElementById('myChart'), config);
 
 Chart.defaults.plugins.legend.position = 'top';
+Chart.defaults.font.size = '16';
 
 const stackedBarData = {
   labels: [
@@ -276,6 +277,11 @@ const stackedBar = {
       },
       y: {
         stacked: true,
+        ticks: {
+          font: {
+            size: 20,
+          },
+        },
       },
     },
     plugins: {
